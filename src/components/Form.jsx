@@ -78,7 +78,7 @@ const Form = () => {
 
   return (
     <section className="w-[90%] max-w-md md:max-w-xl bg-gray-100 px-10 py-5 m-4 rounded-lg">
-      <pre className="mb-2">{JSON.stringify(input, undefined, 2)}</pre>
+      <pre className="m-2">{JSON.stringify(input, undefined, 2)}</pre>
       <form className="w-full" onSubmit={handleSubmit}>
         <div className="relative z-0 w-full mb-5 group">
           <input
