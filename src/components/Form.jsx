@@ -18,13 +18,21 @@ const Form = () => {
     const { name, value } = e.target;
     console.log(name, value);
     setInput({ ...input, [name]: value });
+    // Clear error if valid
+    if (validate(value)) {
+      setErrors('');
+    }
   }
 
   const validate = (value) => {
     const error = {};
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/g;
+    const fnameRegex = /^[A-Za-z]+$/g
+    const lnameRegex = /^[A-Za-z]+$/g
+    const companyRegex = /^[A-Za-z]+$/g
     const mobileRegex = /^[6-9]\d{9}$/g;
     console.log(value.email);
+
     if (!value.email) {
       error.email = "Email is required";
       setIsSubmit(false);
@@ -33,7 +41,7 @@ const Form = () => {
     }
     if (!value.password) {
       error.password = "Password is required";
-    }
+    }else if(value.password.length<6) error.password = "Password length should be atleast 6"
     if (!value.cpassword) {
       error.cpassword = "Confirm Password is required";
     } else if (value.password !== value.cpassword) {
@@ -41,9 +49,13 @@ const Form = () => {
     }
     if (!value.fname) {
       error.fname = "Firstname is required";
+    } else if(!fnameRegex.test(value.fname)) {
+      error.fname = "Firstname is not valid";
     }
     if (!value.lname) {
       error.lname = "Lastname is required";
+    }else if(!lnameRegex.test(value.lname)) {
+      error.fname = "Lastname is not valid";
     }
     if (!value.pno) {
       error.pno = "Mobile number is required";
@@ -52,6 +64,9 @@ const Form = () => {
     } else if (value.pno.length > 10 || value.pno.length < 10) {
       error.pno = "Mobile Number is not valid";
     }
+    // else if(!companyRegex.test(value.company)) {
+    //   error.company = "Company is not valid";
+    // }
     return error;
   };
 
