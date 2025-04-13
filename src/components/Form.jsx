@@ -218,6 +218,7 @@ const Form = () => {
           Submit
         </button>
       </form>
+      {IsSubmit ? <p className="text-center text-green-400">Form Submitted Successfully</p> : ""}
     </section>
   );
 };
