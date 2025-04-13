@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import UserList from "./UserList";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Form = (props) => {
-  const { input, setInput ,initialValue , errors , setErrors ,IsSubmit , setIsSubmit ,validate ,handleSubmit } = props;
+  const { input, setInput , errors , setErrors ,IsSubmit ,validate ,handleSubmit } = props;
 
   function handleChange(e) {
     const { name, value } = e.target;

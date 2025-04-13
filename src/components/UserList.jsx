@@ -7,7 +7,7 @@ const UserList = (props) => {
   const input = location.state;
   return (
     <>
-      <div className="relative overflow-x-auto">
+    {input ? <div className="relative overflow-x-auto mt-10">
         <table className="w-full text-sm text-left rtl:text-right text-white">
           <thead className="text-xs uppercase bg-gray-400 text-white">
             <tr>
@@ -44,7 +44,8 @@ const UserList = (props) => {
           
           </tbody>
         </table>
-      </div>
+      </div> : <p className="text-center text-2xl mt-5">No Results Found</p>}
+      
     </>
   );
 };
