@@ -218,7 +218,7 @@ const Form = () => {
           Submit
         </button>
       </form>
-      {IsSubmit ? <p className="text-center text-green-400 mb-2">Form Submitted Successfully</p> : ""}
+      {IsSubmit ? <p className="text-center text-green-400 mt-2">Form Submitted Successfully</p> : ""}
     </section>
   );
 };
