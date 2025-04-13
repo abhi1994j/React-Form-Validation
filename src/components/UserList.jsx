@@ -1,8 +1,10 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const UserList = (props) => {
-  const {input} =props;
-  
+  // const {input} =props;
+  const location = useLocation();
+  const input = location.state;
   return (
     <>
       <div className="relative overflow-x-auto">

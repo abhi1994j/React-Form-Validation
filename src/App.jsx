@@ -75,8 +75,8 @@ function App() {
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form is submitted Successfully", input);
       setIsSubmit(true);
-      navigate("/user");
-      // setInput(initialValue); // reset only when form is valid
+      navigate("/user", { state: input });
+      setInput(initialValue); // reset only when form is valid
     } else {
       setIsSubmit(false);
     }
